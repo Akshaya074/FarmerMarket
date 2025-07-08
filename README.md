@@ -2,9 +2,6 @@
 
 **FarmerMarket** is a web platform that connects local farmers directly with customers to sell fresh produce online. Built using the MERN stack.
 
-## 🌐 Live Demo
-🔗 [Google Cloud Deployed App](https://farmer-market.herokuapp.com/)
-
 ## 📑 API Documentation
 🔗 [Postman Collection](https://documenter.getpostman.com/view/9740105/T1Dtev6e)
 

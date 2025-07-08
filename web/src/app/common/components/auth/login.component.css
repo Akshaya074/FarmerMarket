@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #7e8e9e;
+  min-height: 100vh;
+}
+.login-card {
+  overflow: hidden;
+  top: 50%;
+  min-width: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 120px;
+  right: 120px;
+  min-height: 70vh;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0%;
+}
+mat-grid-tile {
+  /* background: linear-gradient(#7e8e9e); */
+}
+.login-panel-left {
+  background-image: url(https://www.jing.fm/clipimg/full/27-273214_medium-fruit-veg-box-illustration.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: whitesmoke;
+}
+
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-form-full-width {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .login-card {
+    left: 60px;
+    right: 60px;
+    top: 30%;
+    transform: translateY(-30%);
+  }
+}
+@media (max-width: 500px) {
+  .login-card {
+    left: 30px;
+    right: 30px;
+    top: 30%;
+  }
+}

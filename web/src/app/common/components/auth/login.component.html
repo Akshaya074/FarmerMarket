@@ -1,0 +1,83 @@
+<body>
+  <mat-card class="login-card">
+    <mat-grid-list [cols]="totalSpan" rowHeight="70vh">
+      <mat-grid-tile [colspan]="leftSpan" class="login-panel-left">
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="rightSpan">
+        <form [formGroup]="loginform" (ngSubmit)="onLogin()" class="login-form">
+          <p>
+            <mat-error *ngIf="error">
+              Please enter a valid email address and password
+            </mat-error>
+          </p>
+          <p>Please enter your email and password</p>
+
+          <p>
+            <mat-form-field appearance="outline" class="login-form-full-width">
+              <mat-label>Enter your email</mat-label>
+              <input
+                matInput
+                placeholder="Ex. email@example.com"
+                formControlName="email"
+              />
+              <mat-icon matSuffix>email</mat-icon>
+
+              <mat-error
+                *ngIf="
+                  loginform.get('email').hasError('email') &&
+                  !loginform.get('email').hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="loginform.get('email').hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline" class="login-form-full-width">
+              <mat-label>Enter your password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                formControlName="password"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+
+              <mat-error *ngIf="loginform.get('password').hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </p>
+          <button
+            mat-flat-button
+            color="primary"
+            type="submit"
+            [disabled]="!loginform.valid"
+          >
+            login
+          </button>
+          <div style="padding-top: 20px">
+            <a mat-button (click)="openforgetpasswordDialog()"
+              >Forget password ?</a
+            >
+          </div>
+          <div style="padding-top: 70px">
+            <a mat-button [routerLink]="['/signup']">Create an account</a>
+          </div>
+        </form>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</body>
